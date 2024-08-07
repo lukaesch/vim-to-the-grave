@@ -45,8 +45,7 @@ return require("packer").startup(function(use)
 	-- Fuzzy Search
 	use({
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.5",
-		-- or                            , branch = '0.1.x',
+		tag = "0.1.8",
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 
@@ -81,5 +80,5 @@ return require("packer").startup(function(use)
 	use("tpope/vim-fugitive")
 
 	-- Git Diffview
-    use("sindrets/diffview.nvim")
+	use("sindrets/diffview.nvim")
 end)

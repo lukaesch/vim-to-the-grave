@@ -50,6 +50,11 @@ lspconfig.pyright.setup({
 
 lspconfig.tsserver.setup({
 	capabilities = lsp_capabilities,
+	init_options = {
+		preferences = {
+			importModuleSpecifierPreference = "relative",
+		},
+	},
 })
 
 lspconfig.astro.setup({
