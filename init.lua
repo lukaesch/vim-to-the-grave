@@ -48,7 +48,7 @@ lspconfig.pyright.setup({
 	pyright_opts,
 })
 
-lspconfig.tsserver.setup({
+lspconfig.ts_ls.setup({
 	capabilities = lsp_capabilities,
 	init_options = {
 		preferences = {
@@ -67,10 +67,14 @@ lspconfig.angularls.setup({
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
+
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist)
+
+-- Yank to clipboard using system clipboard
+vim.keymap.set("v", "<leader>y", ":y*<CR>")
 
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("UserLspConfig", {}),
@@ -160,7 +164,7 @@ require("nvim-treesitter.configs").setup({
 		enable = true,
 		additional_vim_regex_highlighting = false,
 	},
-	ident = { enable = true },
+	indent = { enable = true },
 	rainbow = {
 		enable = true,
 		extended_mode = true,
@@ -306,6 +310,10 @@ require("gitsigns").setup({
 		map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>")
 	end,
 })
+
+-- Avante Setup
+require("avante_lib").load()
+require("avante").setup()
 
 -- Set highlights
 vim.api.nvim_set_hl(0, "GitSignsAdd", { link = "DiffAdd" })

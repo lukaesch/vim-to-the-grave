@@ -64,7 +64,7 @@ return require("packer").startup(function(use)
 	-- Statusline
 	use({
 		"nvim-lualine/lualine.nvim",
-		requires = { "nvim-tree/nvim-web-devicons", opt = true },
+		requires = { "nvim-tree/nvim-web-devicons" },
 	})
 
 	-- Gitsigns
@@ -81,4 +81,10 @@ return require("packer").startup(function(use)
 
 	-- Git Diffview
 	use("sindrets/diffview.nvim")
+
+	-- Avante
+	use("stevearc/dressing.nvim")
+	use("MunifTanjim/nui.nvim")
+	use("HakonHarnes/img-clip.nvim")
+	use("yetone/avante.nvim")
 end)

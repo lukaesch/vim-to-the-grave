@@ -2,16 +2,16 @@ vim = vim
 
 vim.g.mapleader = " "
 -- telescope
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<C-ff>', builtin.git_files, {})
-vim.keymap.set('n', '<leader>fs', function()
-                builtin.grep_string({search = vim.fn.input("Grep > ")});
-        end)
+local builtin = require("telescope.builtin")
+vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
+vim.keymap.set("n", "<C-ff>", builtin.git_files, {})
+vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
+vim.keymap.set("n", "<leader>fs", function()
+	builtin.grep_string({ search = vim.fn.input("Grep > ") })
+end)
 
--- Space PV back 
+-- Space PV back
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-
 
 -- Vimspector
 --vim.cmd([[
@@ -23,4 +23,4 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 --nmap <F10> <cmd>call vimspector#StepInto()<cr>")
 --]])
 
-vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
+vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
